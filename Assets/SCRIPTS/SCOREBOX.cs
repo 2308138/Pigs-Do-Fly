@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SCOREBOX : MonoBehaviour
 {
-    public int scoreAmount = 50;
+    public int scoreAmount = 1;
 
     private SCOREMANAGER _scoreManager;
 
@@ -18,7 +18,10 @@ public class SCOREBOX : MonoBehaviour
         if (_scoreManager == null)
             return;
 
+        if (!collision.gameObject.CompareTag("Player"))
+            return;
+
         _scoreManager.AddScore(scoreAmount);
-        Debug.Log("+50");
+        Debug.Log("+1 points.");
     }
 }

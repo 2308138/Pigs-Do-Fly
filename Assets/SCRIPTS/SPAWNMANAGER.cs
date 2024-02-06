@@ -25,6 +25,7 @@ public class SPAWNMANAGER : MonoBehaviour
         _timer = spawnInterval;
 
         int randomizer = Random.Range(0, obstacles.Length);
+
         GameObject.Instantiate(obstacles[randomizer], transform.position, transform.rotation);
     }
 }
